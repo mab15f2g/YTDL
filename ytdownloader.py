@@ -24,7 +24,7 @@ row5 = 250
 row6 = 300
 testlink = "https://www.youtube.com/watch?v=2uRO_FabHRo"
 testplaylist = "https://www.youtube.com/playlist?list=PLkdKYxSQmXhOkpa105w1vwPOmv3fBshYv"
-canvas1 = tk.Canvas(root, width=800, height=400)
+canvas1 = tk.Canvas(root, width=400, height=400)
 canvas1.grid(row=0, column=1)
 
 frame = Frame(root)
@@ -43,7 +43,7 @@ def download():
     comm = comm.join(create_command())
     print(comm)
     # execute dl.exe
-    #subprocess.call(comm)
+    subprocess.call(comm)
 
 # concate the options
 def set_options():
