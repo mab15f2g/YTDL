@@ -33,8 +33,6 @@ frame.grid(row=0, column=0, sticky="n")
 is_checked_playlist = tk.IntVar()
 is_checked_error = tk.IntVar()
  
-
-
 ##
 # Dowload button click methode
 ##
@@ -114,9 +112,9 @@ canvas1.create_window(col2, row3, window=check_error)
 ##
 # Textfield
 ##
-entry1 = tk.Entry(root) 
+entry1 = tk.Entry(root, width=50) 
 entry1.insert(0, "Paste link here")
-canvas1.create_window(col1, row1, window=entry1)
+canvas1.create_window(col1 + 25, row1, window=entry1)
 
 ##
 # Scaler
@@ -124,4 +122,5 @@ canvas1.create_window(col1, row1, window=entry1)
 scaler = Scale(root, from_=128, to=320, orient=HORIZONTAL)
 canvas1.create_window(col2, row4, window=scaler)
 
+# main application loop
 root.mainloop()
