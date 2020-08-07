@@ -31,7 +31,8 @@ frame = Frame(root)
 frame.grid(row=0, column=0, sticky="n")
 
 is_checked_playlist = tk.IntVar()
-
+is_checked_error = tk.IntVar()
+ 
 
 
 ##
@@ -42,7 +43,7 @@ def download():
     comm = comm.join(create_command())
     print(comm)
     # execute dl.exe
-    subprocess.call(comm)
+    #subprocess.call(comm)
 
 # concate the options
 def set_options():
@@ -50,7 +51,8 @@ def set_options():
     options = []
     if is_checked_playlist.get() == 1:
         options.append("--playlist")
-
+    if is_checked_error.get() == 1:
+        options.append("-i")
     options.append("--audio-quality")
     options.append(str(scaler.get()))
     return options
@@ -80,6 +82,14 @@ label3 = tk.Label(text='Playlist?')
 label3.config(font=('helvetica', 8))
 canvas1.create_window(col1, row3, window=label3)
 
+label3 = tk.Label(text='Playlist?')
+label3.config(font=('helvetica', 8))
+canvas1.create_window(col1, row2, window=label3)
+
+label3 = tk.Label(text='ignore Errors?')
+label3.config(font=('helvetica', 8))
+canvas1.create_window(col1, row3, window=label3)
+
 label4 = tk.Label(text='Quality?')
 label4.config(font=('helvetica', 8))
 canvas1.create_window(col1, row4, window=label4)
@@ -93,8 +103,13 @@ canvas1.create_window(col1, row6, window=button1)
 ##
 # Checkbox
 ##
+#Playlist check
 check_playlist = Checkbutton(root, variable=is_checked_playlist)
-canvas1.create_window(col2, row3, window=check_playlist)
+canvas1.create_window(col2, row2, window=check_playlist)
+#Error check
+check_error = Checkbutton(root, variable=is_checked_error)
+canvas1.create_window(col2, row3, window=check_error)
+
 
 ##
 # Textfield
