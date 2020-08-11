@@ -15,12 +15,11 @@ is_checked_bypass = tk.IntVar()
 
 # Dowload button click methode
 def download():
-    print(w.get())   
     comm = " "
     comm = comm.join(create_command())
     print(comm)
     # execute dl.exe
-    # subprocess.call(comm)
+    subprocess.call(comm)
 
 # Concate the options
 def set_options():
