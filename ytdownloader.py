@@ -38,8 +38,7 @@ def set_options():
         options.append("--geo-bypass")
     
     options.append("-r")
-    options.append(str(scale2.get()*1000))
-    options.append("K")
+    options.append(str(scale2.get()*1000))    
     options.append("--audio-quality")
     options.append(str(scale.get()))
     return options
