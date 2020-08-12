@@ -21,7 +21,7 @@ def download():
     comm = comm.join(create_command())
     print(comm)
     # execute dl.exe
-    #subprocess.call(comm)
+    subprocess.call(comm)
 
 # Concate the options
 def set_options():
@@ -36,9 +36,9 @@ def set_options():
         options.append("-i")
     if is_checked_bypass.get() == 1:
         options.append("--geo-bypass")
-
+    
     options.append("-r")
-    options.append(str(scale2.get()))
+    options.append(str(scale2.get()*1000))
     options.append("K")
     options.append("--audio-quality")
     options.append(str(scale.get()))
@@ -52,7 +52,7 @@ def get_link():
 
 # Conates the command
 def create_command():
-    command = ["dl.exe -x"]
+    command = ["dl.exe -x  -o /downloaded/%(title)s.%(ext)s"]
     link = get_link()
     options = set_options()
     command.append(link)
