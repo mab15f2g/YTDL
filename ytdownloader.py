@@ -14,7 +14,7 @@ is_checked_error = tk.IntVar()
 is_checked_bypass = tk.IntVar()
 
 # Dowload button click methode
-def download():
+def download():   
     comm = " "
     comm = comm.join(create_command())
     print(comm)
@@ -26,8 +26,7 @@ def set_options():
 
     options = []
     options.append("--audio-format")
-    options.append(w.get())
-
+    options.append(combobox1.get())
 
     if is_checked_playlist.get() == 1:
         options.append("--playlist")
@@ -36,14 +35,12 @@ def set_options():
     if is_checked_bypass.get() == 1:
         options.append("--geo-bypass")
 
-
     options.append("--audio-quality")
     options.append(str(scale.get()))
     return options
 
 # get link from textfield
-def get_link():
-    
+def get_link():    
     link = e1.get()
 
     return link
@@ -61,7 +58,7 @@ def create_command():
 
 # Labels
 label1 = Label(root, text="YT Link").grid(row=0)
-label2 = Label(root, text="Quality").grid(row=5,column=1, sticky=W)
+label2 = Label(root, text="Quality  Format in Kbit/s").grid(row=5,column=1, sticky=W)
 label3 = Label(root, text="Audio Format").grid(row=4,column=1, sticky=W)
 
 # Entry fileds 
@@ -77,16 +74,18 @@ check_error.grid(row=2, column=1, sticky=W)
 checkbutton3 = Checkbutton(root, text = "Bypass geoblock?",variable=is_checked_bypass )
 checkbutton3.grid(row=3, column=1, sticky=W)
 
-# Download button
-button1 = Button(root, text = "Download",command=download, bg='blue', fg='white')
-button1.grid(sticky=E + S)
-
 # Combobox
-w = ttk.Combobox(root, values = audio_choices)
-w.current(2)
-w.grid(row=4, column=1)
+combobox1 = ttk.Combobox(root, values = audio_choices)
+combobox1.current(2)
+combobox1.grid(row=4, column=1)
 
 # Quality slider
 scale = Scale(root, from_=128, to=320, orient=HORIZONTAL)
 scale.grid(row=5,column=1)
+
+# Download button
+button1 = Button(root, text = "Download",command=download, bg='blue', fg='white')
+button1.grid(row=7, column=1,sticky=W)
+
+# Main loop
 root.mainloop()
