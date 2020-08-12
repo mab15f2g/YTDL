@@ -38,7 +38,10 @@ OPTIONS
 --mark-watched                   Mark videos watched (YouTube only)
 --no-mark-watched                Do not mark videos watched (YouTube only)
 --no-color                       Do not emit color codes in output
+############################################################################################
 Network Options:
+
+
 --proxy URL                      Use the specified HTTP/HTTPS/SOCKS proxy.
                                  To enable SOCKS proxy, specify a proper
                                  scheme. For example
@@ -48,7 +51,10 @@ Network Options:
 --source-address IP              Client-side IP address to bind to
 -4, --force-ipv4                 Make all connections via IPv4
 -6, --force-ipv6                 Make all connections via IPv6
+############################################################################################
 Geo Restriction:
+
+
 --geo-verification-proxy URL     Use this proxy to verify the IP address for
                                  some geo-restricted sites. The default
                                  proxy specified by --proxy (or none, if the
@@ -64,7 +70,10 @@ Geo Restriction:
 --geo-bypass-ip-block IP_BLOCK   Force bypass geographic restriction with
                                  explicitly provided IP block in CIDR
                                  notation
+############################################################################################
 Video Selection:
+
+
 --playlist-start NUMBER          Playlist video to start at (default is 1)
 --playlist-end NUMBER            Playlist video to end at (default is last)
 --playlist-items ITEM_SPEC       Playlist video items to download. Specify
@@ -123,7 +132,10 @@ Video Selection:
                                  downloaded videos in it.
 --include-ads                    Download advertisements as well
                                  (experimental)
+############################################################################################
 Download Options:
+
+
 -r, --limit-rate RATE            Maximum download rate in bytes per second
                                  (e.g. 50K or 4.2M)
 -R, --retries RETRIES            Number of retries (default is 10), or
@@ -166,7 +178,10 @@ Download Options:
                                  aria2c,avconv,axel,curl,ffmpeg,httpie,wget
 --external-downloader-args ARGS  Give these arguments to the external
                                  downloader
+############################################################################################
 Filesystem Options:
+
+
 -a, --batch-file FILE            File containing URLs to download ('-' for
                                  stdin), one URL per line. Lines starting
                                  with '#', ';' or ']' are considered as
@@ -209,12 +224,18 @@ Filesystem Options:
                                  may change.
 --no-cache-dir                   Disable filesystem caching
 --rm-cache-dir                   Delete all filesystem cache files
+############################################################################################
 Thumbnail images:
+
+
 --write-thumbnail                Write thumbnail image to disk
 --write-all-thumbnails           Write all thumbnail image formats to disk
 --list-thumbnails                Simulate and list all available thumbnail
                                  formats
+############################################################################################
 Verbosity / Simulation Options:
+
+
 -q, --quiet                      Activate quiet mode
 --no-warnings                    Ignore warnings
 -s, --simulate                   Do not download the video and do not write
@@ -250,7 +271,10 @@ Verbosity / Simulation Options:
 -C, --call-home                  Contact the youtube-dl server for debugging
 --no-call-home                   Do NOT contact the youtube-dl server for
                                  debugging
+############################################################################################
 Workarounds:
+
+
 --encoding ENCODING              Force the specified encoding (experimental)
 --no-check-certificate           Suppress HTTPS certificate validation
 --prefer-insecure                Use an unencrypted connection to retrieve
@@ -275,7 +299,10 @@ Workarounds:
                                  before each download (maximum possible
                                  number of seconds to sleep). Must only be
                                  used along with --min-sleep-interval.
+############################################################################################
 Video Format Options:
+
+
 -f, --format FORMAT              Video format code, see the "FORMAT
                                  SELECTION" for all the info
 --all-formats                    Download all available video formats
@@ -289,7 +316,10 @@ Video Format Options:
                                  bestvideo+bestaudio), output to given
                                  container format. One of mkv, mp4, ogg,
                                  webm, flv. Ignored if no merge is required
+############################################################################################
 Subtitle Options:
+
+
 --write-sub                      Write subtitle file
 --write-auto-sub                 Write automatically generated subtitle file
                                  (YouTube only)
@@ -309,7 +339,10 @@ Authentication Options:
 -2, --twofactor TWOFACTOR        Two-factor authentication code
 -n, --netrc                      Use .netrc authentication data
 --video-password PASSWORD        Video password (vimeo, smotri, youku)
+############################################################################################
 Adobe Pass Options:
+
+
 --ap-mso MSO                     Adobe Pass multiple-system operator (TV
                                  provider) identifier, use --ap-list-mso for
                                  a list of available MSOs
@@ -319,7 +352,10 @@ Adobe Pass Options:
                                  ask interactively.
 --ap-list-mso                    List all supported multiple-system
                                  operators
+############################################################################################
 Post-processing Options:
+
+
 -x, --extract-audio              Convert video files to audio-only files
                                  (requires ffmpeg or avconv and ffprobe or
                                  avprobe)
